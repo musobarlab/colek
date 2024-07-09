@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Demo</title>
+    <script>
+        (function(w,d){
+            var observer = new MutationObserver(function() {
+                if (d.body) {
+                    var b = d.createElement('div');
+                    b.setAttribute("id", "colek");
+
+                    var j = d.createElement('script');
+                    j.src = "./colek.min.js";
+
+                    d.body.appendChild(b);
+                    d.body.appendChild(j);
+
+                    observer.disconnect();
+                }
+            });
+            observer.observe(d.documentElement, {childList: true});
+        })(window,document);
+    </script>
+  </head>
+
+  <body>
+    <h1>Demo</h1>
+    
+  </body>
+</html>

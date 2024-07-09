@@ -38,7 +38,7 @@ function parseValue(value: any) {
     }
     return attrsObj;
   }
-  
+
 function HtmlTagWrapper(Component: (props?: any) => JSX.Element) {
     const el = document.getElementById('colek');
     const attrs = el.attributes;
@@ -46,7 +46,7 @@ function HtmlTagWrapper(Component: (props?: any) => JSX.Element) {
     const props = attrToObj(attrs);
     console.log(props);
     const root = createRoot(el);
-    root.render(<Component {...props} />,);
+    root.render(<Component {...props} />);
   }
   
   export { HtmlTagWrapper };

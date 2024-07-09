@@ -17,22 +17,22 @@ function Colek() {
         // buttonEnabled(username, password)
     }
 
-    const buttonEnabled = (name) => {
-        if(name.length > 0 ) {
-            setEnabled(true);
-        } else {
-            setEnabled(false);
-        }
+    const buttonEnabled = () => {
+        setEnabled(!enabled);
     }
 
     return (
-        <Frame>
-            <StyledForm onSubmit={handleSubmit}>
-                <StyledLabel>Name:</StyledLabel>
-                <StyledInput type="text" value={name} onChange={e => nameEntered(e)}/>
-                <StyledButton type="submit" disabled={!name}>Send</StyledButton>
-            </StyledForm>
-        </Frame>
+        <div>
+            <button onClick={buttonEnabled}>Click</button>
+            {enabled && 
+            <Frame>
+                <StyledForm onSubmit={handleSubmit}>
+                    <StyledLabel>Name:</StyledLabel>
+                    <StyledInput type="text" value={name} onChange={e => nameEntered(e)}/>
+                    <StyledButton type="submit" disabled={!name}>Send</StyledButton>
+                </StyledForm>
+            </Frame>}
+        </div>
     )
 }
 
